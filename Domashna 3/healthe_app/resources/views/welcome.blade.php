@@ -31,12 +31,6 @@
                     <input type="text" placeholder="Пребарај.." name="q">
                     <button type="submit">Најди</button>
                 </form>
-
-                @foreach ($users as $user)
-                    <p> {{ $user->name }} </p>
-                    <p> Longitude:{{ $user->long }} Lattitude{{ $user->lat }} </p>
-                    <br>
-                @endforeach
                 
                 <br>
                 <p>Најди најблиски објекти:

@@ -40,9 +40,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
-                    <table class="table table-striped">
+                    <table class="table">
                         <thead>
-                            <tr>
+                            <tr class="table-dark">
                                 <th scope="col">Name</th>
                                 <th scope="col">Type</th>
                                 <th scope="col">Working Hours</th>
@@ -52,7 +52,7 @@
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
-                                <tr>
+                                <tr class="table-light">
                                     <th scope="row">{{ $user->name }}</th>
                                     <td>{{ $user->type }}</td>
                                     <td>8:00 - 20:00</td>

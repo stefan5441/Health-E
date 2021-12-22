@@ -24,7 +24,7 @@
                 <div class="col-sm-5">
                     <form action="{{ route("search") }}" method="GET" role="search" class="d-flex flex-row justify-content-between">
                         {{ csrf_field() }}
-                        <input type="text" placeholder="Пребарај.." name="q" class="form-control mr-sm-2" id="searchInput">
+                        <input type="text" placeholder="Пребарај..." name="q" class="form-control mr-sm-2" id="searchInput">
                         <button type="submit" class="btn btn-danger my-2 my-sm-0" id="searchButton">Најди</button>
                     </form>
                 </div>

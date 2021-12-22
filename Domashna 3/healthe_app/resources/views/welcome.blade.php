@@ -28,7 +28,7 @@
 
                 <form action="{{ route("search") }}" method="GET" role="search">
                     {{ csrf_field() }}
-                    <input type="text" placeholder="Пребарај.." name="q">
+                    <input type="text" placeholder="Пребарај..." name="q">
                     <button type="submit">Најди</button>
                 </form>
                 

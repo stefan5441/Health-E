@@ -15,6 +15,6 @@ class UserController extends Controller
             ->where('name', 'like', "%{$key}%")
             ->get();
 
-        return view('welcome', compact('users'));
+        return view('results', compact('users'));
     }
 }

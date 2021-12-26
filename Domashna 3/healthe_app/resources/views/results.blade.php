@@ -11,11 +11,32 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <!-- CSS -->
         <link href="{{ asset('css/results.css') }}" rel="stylesheet">
+
+        
+
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css' rel='stylesheet' />
+
+        <!-- Inside CSS -->
+        <style>
+            #navbarButtons {
+                direction: rtl;
+            }
+            .table {
+                height: 100%;
+            }
+            #tableMap{
+                margin-top: 4rem;
+            }
+            #searchNav {
+                margin-top: 4rem;
+            }
+        </style>
     </head>
     <body class="antialiased">
 
         {{-- NavBar --}}
-        <div class="container my-4">
+        <div class="container" id="searchNav">
             <div class="row navbar navbar-dark">
                 <div class="col-sm-2">
                     <a class="navbar-brand">Health-E</a>
@@ -29,7 +50,7 @@
                     </form>
                 </div>
 
-                <div class="col-sm-4 pl-sm-3">
+                <div class="col-sm-4 pl-sm-3" id="navbarButtons">
                     <button type="button" class="btn btn-danger">Освежи локација</button>
                     <button type="button" class="btn btn-secondary">Додади твоја локација</button>
                 </div>
@@ -37,9 +58,9 @@
         </div>
 
         {{-- search results --}}
-        <div class="container">
+        <div class="container" id="tableMap">
             <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-6">
                     <table class="table">
                         <thead>
                             <tr class="table-dark">
@@ -59,23 +80,38 @@
                                     <td>No adress available</td>
                                     <td>www.google.com</td>
                                 </tr>
+                                <?php 
+                                    echo "<script type='text/javascript'>addMarker('$user->long', '$user->lat');</script>"
+                                ?>
                             @endforeach
                         </tbody>
                     </table>
+                    <span>
+                        {{ $users->links('pagination::bootstrap-4') }}
+                    </span>
                 </div>
-                <div class="col-sm-5"></div>
+                <div class="col-sm-6">
+                    <div id='map' style='width: 100%; height: 100%;'></div>
+                </div>
             </div>
         </div>
 
-        {{--     <div>
-                @foreach ($users as $user)
-                    <p> {{ $user->name }} </p>
-                    <p> Longitude:{{ $user->long }} Lattitude{{ $user->lat }} </p>
-                    <br>
-                @endforeach
-            </div>
-        </div> --}}
 
+        <!--MapBox JS -->
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1Ijoic3RlZmFuZGlhbnMiLCJhIjoiY2t4aHAwZWg2MnVjeTMwbzFtam54enpqYiJ9.B264t4XyHpD9f0t-sSooMQ';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [21.4254, 41.9981],
+                zoom: 10
+            });
+            function addMarker(lng, lat){
+                const marker = new mapboxgl.Marker()
+                    .setLngLat([lng, lat])
+                    .addTo(map);
+            }
+        </script>
         <!-- Bootstrap -->
         <script src="{{ asset('js/app.js') }}"></script>
     </body>

@@ -13,8 +13,8 @@ class UserController extends Controller
 
         $users = User::query()
             ->where('name', 'like', "%{$key}%")
-            ->paginate(5);
+            ->get();
 
-        return view('results', compact('users'));
+        return view('welcome', compact('users'));
     }
 }

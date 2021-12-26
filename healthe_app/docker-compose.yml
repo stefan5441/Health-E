@@ -1,0 +1,30 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - 80:80
+    env_file: .env
+    volumes:
+      - ./:/var/www
+      # Specified because syslink from image is overwritten by above line
+      - ./storage/app/images:/var/www/public/images
+      - ./storage/app/images/products:/var/www/public/images/products
+      - ./storage/app/images/materials:/var/www/public/images/materials
+      - ./apache-default.conf:/etc/apache2/sites-available/000-default.conf
+      # Disabling Opcache during development :)
+      - ./php.ini:/usr/local/etc/php/conf.d/opcache.ini
+      - ./php.ini:/usr/local/etc/php/php.ini
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 33066:3306
+    environment:
+      MYSQL_DATABASE: database
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+    - mysqllib:/var/lib/mysql
+
+volumes:
+  mysqllib:

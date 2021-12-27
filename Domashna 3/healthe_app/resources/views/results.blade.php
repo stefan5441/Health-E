@@ -32,14 +32,14 @@
                 margin-top: 2rem;
             }
             .table thead tr {
-                line-height: 2rem
+                line-height: 1rem;
             }
             .table thead tr th {
                 text-align: center;
                 vertical-align: middle;
             }
             .table tbody tr {
-                line-height: 2rem
+                line-height: 1rem;
             }
             .table tbody tr th {
                 text-align: center;
@@ -70,6 +70,10 @@
                 height: 3.5rem;
             }
 
+            .orangeBg {
+                background-color: #d63504;
+            }
+
         </style>
     </head>
     <body class="antialiased">
@@ -79,13 +83,13 @@
             <div class="collapse navbar-collapse justify-content-between">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Почетна</a>
+                        <a class="nav-link" href="{{ URL::route('home') }}">Почетна</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">За нас</a>
+                        <a class="nav-link" href="{{ URL::route('about') }}">За нас</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Помош</a>
+                        <a class="nav-link" href="{{ URL::route('help') }}">Помош</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mr-auto">
@@ -103,7 +107,7 @@
         <div class="container" id="searchNav">
             <div class="row navbar navbar-dark">
                 <div class="col-sm-3">
-                    <a class="navbar-brand">
+                    <a class="navbar-brand" href="{{ URL::route('home') }}">
                         <img src="{{url('images/logoIcon.png')}}" alt="Health-E">
                         <img src="{{url('images/logoType.png')}}" alt="Health-E">
                     </a>
@@ -113,12 +117,12 @@
                     <form action="{{ route("search") }}" method="GET" role="search" class="d-flex flex-row justify-content-between">
                         {{ csrf_field() }}
                         <input type="text" placeholder="Пребарај..." name="q" class="form-control mr-sm-2" id="searchInput">
-                        <button type="submit" class="btn btn-danger my-2 my-sm-0" id="searchButton">Најди</button>
+                        <button type="submit" class="btn btn-danger my-2 my-sm-0 orangeBg" id="searchButton">Најди</button>
                     </form>
                 </div>
 
                 <div class="col-sm-4 pl-sm-3" id="navbarButtons">
-                    <button type="button" class="btn btn-danger" onclick="myLocation()">Освежи локација</button>
+                    <button type="button" class="btn btn-danger orangeBg" onclick="myLocation()">Освежи локација</button>
                     <button type="button" class="btn btn-secondary" onclick="myLocation()">Додади твоја локација</button>
                 </div>
             </div>
@@ -131,11 +135,11 @@
                     <table class="table">
                         <thead>
                             <tr class="table-dark">
-                                <th scope="col">Name</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Working Hours</th>
-                                <th scope="col">Adress</th>
-                                <th scope="col">Website</th>
+                                <th scope="col">Име</th>
+                                <th scope="col">Тип</th>
+                                <th scope="col">Работно Време</th>
+                                <th scope="col">Адреса</th>
+                                <th scope="col">Веб Страна</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -143,9 +147,13 @@
                                 <tr class="table-light">
                                     <th scope="row">{{ $user->name }}</th>
                                     <td>{{ $user->type }}</td>
-                                    <td>8:00 - 20:00</td>
-                                    <td>No adress available</td>
-                                    <td>www.google.com</td>
+                                    <td>{{ $user->working_hours }}</td>
+                                    <td>{{ $user->address }}</td>
+                                    @if ($user->website == "N/A")
+                                        <td> N/A </td>
+                                    @else
+                                        <td><a href="{{ $user->website }}">Линк до страната!</a></td>
+                                    @endif
                                 </tr>
                                 <?php 
                                     echo "<script type='text/javascript'>

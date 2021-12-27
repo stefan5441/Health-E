@@ -40,9 +40,9 @@
             }
 
             #imageLogo{
-                width: 60%;
-                height: 60%;
-                margin-top: 2rem;
+                width: 40%;
+                height: 40%;
+                margin-bottom: 2rem;
             }
 
             #welcomePage form{
@@ -56,7 +56,20 @@
             }
 
             #welcomePage {
-                margin-top: 6rem;
+                margin-top: 7rem;
+            }
+
+            #welcomePage ul {
+                font-size: 0.95rem;
+                color: whitesmoke;
+                font-weight: bold;
+                background-color: #2a2a2a;
+                border-radius: 2rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                list-style-type: none;
             }
         </style>
     </head>
@@ -90,12 +103,11 @@
         {{-- page content  --}}
         <div class="container center" id="welcomePage">
                 <img src="{{url('images/logoTypeIcon.png')}}" alt="Health-E" id="imageLogo">
-
-            <form action="{{ route("search") }}" method="GET" role="search" class="d-flex flex-row justify-content-between center">
-                {{ csrf_field() }}
-                <input type="text" placeholder="Пребарај..." name="q" class="form-control mr-sm-2" id="searchInput">
-                <button type="submit" class="btn btn-danger my-2 my-sm-0 orangeBg" id="searchButton">Најди</button>
-            </form>
+                <ul>
+                    <li>Contanct info:</li>
+                    <li>Phone: xxx/xxx-xxx</li>
+                    <li>Mail: xxx@gmail.com</li>
+                </ul>
         </div>
 
         <!-- Bootstrap -->

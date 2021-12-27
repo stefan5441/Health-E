@@ -20,3 +20,9 @@ Route::get('/', function () {
 
 Route::get('/search', 
 'App\Http\Controllers\UserController@search')->name('search');
+
+Route::view('/', 'welcome')->name('home');
+
+Route::view('/about', 'about')->name('about');
+
+Route::view('/help', 'help')->name('help');

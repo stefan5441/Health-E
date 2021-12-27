@@ -40,14 +40,8 @@
             }
 
             #imageLogo{
-                width: 60%;
-                height: 60%;
-                margin-top: 2rem;
-            }
-
-            #welcomePage form{
-                width: 30rem;
-                margin-top: 2rem;
+                width: 40%;
+                height: 40%;
                 margin-bottom: 2rem;
             }
 
@@ -56,7 +50,19 @@
             }
 
             #welcomePage {
-                margin-top: 6rem;
+                margin-top: 3rem;
+            }
+
+            #welcomePage p {
+                font-size: 0.95rem;
+                color: whitesmoke;
+                font-weight: bold;
+                background-color: #2a2a2a;
+                border-radius: 2rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+                padding-left: 2rem;
+                padding-right: 2rem;
             }
         </style>
     </head>
@@ -90,12 +96,9 @@
         {{-- page content  --}}
         <div class="container center" id="welcomePage">
                 <img src="{{url('images/logoTypeIcon.png')}}" alt="Health-E" id="imageLogo">
-
-            <form action="{{ route("search") }}" method="GET" role="search" class="d-flex flex-row justify-content-between center">
-                {{ csrf_field() }}
-                <input type="text" placeholder="Пребарај..." name="q" class="form-control mr-sm-2" id="searchInput">
-                <button type="submit" class="btn btn-danger my-2 my-sm-0 orangeBg" id="searchButton">Најди</button>
-            </form>
+                <p>
+                    Health-E е веб апликација за пронаоѓање на здравствени објекти (државни болници, приватни болници и ординации и аптеки) во Скопје. Целта на апликацијата е да се овозможи на сите жители брзо и точно да пронајдат објект кој на нив им е потребен. На почетокот на страната е прикажано поле за пребарување каде што корисникот внесува тип на здравствена установа која му е потребна. Со кликање на копчето “пребарај” се прикажува листа од соодветните објекти, тип на објект (државна или приватна), линк до нивните веб страни, работно време и локација. Исто така, се прикажува и карта од градот со мапирање на соодветните локации. На почетната страна исто така се прикажани и најчесто пристапените здравствени објекти. Со кликање за нив се отвара ново прозорче каде што може да се прочитаат основните податоци за нив. Целта на апликацијата е да се олесни пристапот и барањето на здравстени објекти на сите корисници. Апликацијата ќе работи на сите веб прелистувачи и ќе биде достапна на македонски и англиски јазик. Апликацијата ќе има едноставен и интуитевен интерфејс за да може да биде лесна за користење за сите корисници.
+                </p>
         </div>
 
         <!-- Bootstrap -->

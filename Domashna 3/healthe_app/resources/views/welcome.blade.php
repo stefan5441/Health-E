@@ -17,7 +17,7 @@
 
         <style>
             body {
-                /* background-image: url({{url('images/backgroundImage.png')}}); */
+                background-image: url({{url('images/backgroundImage.png')}});
                 background-size: cover;
             }
             #blackNav ul li{
@@ -31,6 +31,24 @@
             
             #blackNav {
                 height: 2.5rem;
+            }
+
+            .center {
+                margin: auto;
+                width: 50%;
+                text-align: center;
+            }
+
+            #imageLogo{
+                width: 40%;
+                height: 40%;
+                margin-top: 2rem;
+            }
+
+            #welcomePage form{
+                width: 30rem;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
             }
         </style>
     </head>
@@ -61,13 +79,14 @@
             </div>
         </nav>
 
-        <div class="container">
-            <h1>Health-E</h1>
+        {{-- page content  --}}
+        <div class="container center" id="welcomePage">
+                <img src="{{url('images/logoTypeIcon.png')}}" alt="Health-E" id="imageLogo">
 
-            <form action="{{ route("search") }}" method="GET" role="search">
+            <form action="{{ route("search") }}" method="GET" role="search" class="d-flex flex-row justify-content-between center">
                 {{ csrf_field() }}
-                <input type="text" placeholder="Пребарај..." name="q">
-                <button type="submit">Најди</button>
+                <input type="text" placeholder="Пребарај..." name="q" class="form-control mr-sm-2" id="searchInput">
+                <button type="submit" class="btn btn-danger my-2 my-sm-0" id="searchButton">Најди</button>
             </form>
         </div>
 

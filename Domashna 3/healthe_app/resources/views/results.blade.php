@@ -26,10 +26,10 @@
                 height: 30rem;
             }
             #tableMap{
-                margin-top: 4rem;
+                margin-top: 2rem;
             }
             #searchNav {
-                margin-top: 4rem;
+                margin-top: 2rem;
             }
             .table thead tr {
                 line-height: 2rem
@@ -50,7 +50,7 @@
                 vertical-align: middle;
             }
             body {
-                /* background-image: url({{url('images/backgroundImage.png')}}); */
+                background-image: url({{url('images/backgroundImage.png')}});
                 background-size: cover;
             }
             #blackNav ul li{
@@ -65,6 +65,11 @@
             #blackNav {
                 height: 2.5rem;
             }
+
+            #searchNav img {
+                height: 3.5rem;
+            }
+
         </style>
     </head>
     <body class="antialiased">
@@ -97,8 +102,11 @@
         {{-- NavBar --}}
         <div class="container" id="searchNav">
             <div class="row navbar navbar-dark">
-                <div class="col-sm-2">
-                    <a class="navbar-brand">Health-E</a>
+                <div class="col-sm-3">
+                    <a class="navbar-brand">
+                        <img src="{{url('images/logoIcon.png')}}" alt="Health-E">
+                        <img src="{{url('images/logoType.png')}}" alt="Health-E">
+                    </a>
                 </div>
 
                 <div class="col-sm-5">

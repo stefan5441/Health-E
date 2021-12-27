@@ -26,3 +26,23 @@ Route::view('/', 'welcome')->name('home');
 Route::view('/about', 'about')->name('about');
 
 Route::view('/help', 'help')->name('help');
+
+Route::get('/mk', function(){
+    App::setlocale('mk');
+    return view('welcome');
+})->name('mk');
+
+Route::get('/en', function(){
+    App::setlocale('en');
+    return view('welcome');
+})->name('en');
+
+Route::get('/results/mk', function(){
+    App::setlocale('mk');
+    return view('results');
+})->name('resmk');
+
+Route::get('/results/en', function(){
+    App::setlocale('en');
+    return view('results');
+})->name('resen');

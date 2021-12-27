@@ -67,21 +67,21 @@
             <div class="collapse navbar-collapse justify-content-between">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ URL::route('home') }}">Почетна</a>
+                        <a class="nav-link" href="{{ URL::route('home') }}">{{__('welcome.home')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ URL::route('about') }}">За нас</a>
+                        <a class="nav-link" href="{{ URL::route('about') }}">{{__('welcome.about')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ URL::route('help') }}">Помош</a>
+                        <a class="nav-link" href="{{ URL::route('help') }}">{{__('welcome.help')}}</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Македонски</a>
+                        <a class="nav-link" href="{{ URL::route('mk') }}">{{__('welcome.mk')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Англиски</a>
+                        <a class="nav-link" href="{{ URL::route('en') }}">{{__('welcome.en')}}</a>
                     </li>
                 </ul>
             </div>
@@ -93,8 +93,8 @@
 
             <form action="{{ route("search") }}" method="GET" role="search" class="d-flex flex-row justify-content-between center">
                 {{ csrf_field() }}
-                <input type="text" placeholder="Пребарај..." name="q" class="form-control mr-sm-2" id="searchInput">
-                <button type="submit" class="btn btn-danger my-2 my-sm-0 orangeBg" id="searchButton">Најди</button>
+                <input type="text" placeholder="{{__('welcome.search')}}" name="q" class="form-control mr-sm-2" id="searchInput">
+                <button type="submit" class="btn btn-danger my-2 my-sm-0 orangeBg" id="searchButton">{{__('welcome.find')}}</button>
             </form>
         </div>
 

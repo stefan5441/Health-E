@@ -92,14 +92,6 @@
                         <a class="nav-link" href="{{ URL::route('help') }}">Помош</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Македонски</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Англиски</a>
-                    </li>
-                </ul>
             </div>
         </nav>
 

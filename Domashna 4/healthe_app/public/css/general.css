@@ -1,0 +1,106 @@
+body {
+    background-image: url(images/background.jpg);
+    background-size: cover;
+}
+#blackNav ul li{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+#blackNav ul {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#blackNav {
+    height: 2.5rem;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+#imageLogo{
+    width: 60%;
+    height: 60%;
+    margin-top: 2rem;
+}
+
+#welcomePage form{
+    width: 30rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.orangeBg {
+    background-color: #d63504;
+}
+
+#welcomePage {
+    margin-top: 6rem;
+}
+
+#navbarButtons {
+    direction: rtl;
+}
+.table {
+    height: 30rem;
+}
+#tableMap{
+    margin-top: 2rem;
+}
+#searchNav {
+    margin-top: 2rem;
+}
+.table thead tr {
+    line-height: 1rem;
+}
+.table thead tr th {
+    text-align: center;
+    vertical-align: middle;
+}
+.table tbody tr {
+    line-height: 1rem;
+}
+.table tbody tr th {
+    text-align: center;
+    vertical-align: middle;
+}
+.table tbody tr td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#searchNav img {
+    height: 3.5rem;
+}
+
+#welcomePage ul {
+    font-size: 0.95rem;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: #2a2a2a;
+    border-radius: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    list-style-type: none;
+}
+
+#welcomePage2 {
+    margin-top: 2rem;
+}
+
+#welcomePage2 p {
+    font-size: 0.8rem;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: #2a2a2a;
+    border-radius: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
